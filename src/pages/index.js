@@ -1,10 +1,11 @@
-import React from "react"
+import React from 'react'
+
 import Layout from 'components/Layout'
-import Nav from 'components/Nav'
+import Button from 'components/Button'
 
 const IndexPage = () => (
     <Layout title=".dw - portfolio">
-      <Nav />
+      <Button>view project</Button>
     </Layout>
   )
 

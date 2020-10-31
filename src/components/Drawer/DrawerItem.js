@@ -28,8 +28,8 @@ const DrawerLink = motion.custom(styled(Link)`
   text-decoration: none;
 `)
 
-const DrawerItem = ({ to, toggleOpen, children }) => {
-  const stiffness = 1000
+const DrawerItem = ({ to, toggleMenu, children }) => {
+  const stiffness = 1
 
   const variants = {
     open: {
@@ -61,7 +61,7 @@ const DrawerItem = ({ to, toggleOpen, children }) => {
       <DrawerLink
         variants={variants}
         to={to}
-        onClick={() => toggleOpen()}
+        onClick={() => toggleMenu()}
       >
         {children}
       </DrawerLink>
@@ -70,7 +70,7 @@ const DrawerItem = ({ to, toggleOpen, children }) => {
 }
 
 DrawerItem.propTypes = {
-  toggleOpen: PropTypes.func.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired
 }

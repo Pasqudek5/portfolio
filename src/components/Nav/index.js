@@ -9,7 +9,7 @@ import MenuToggle from './MenuToggle'
 
 const Header = styled(motion.header)`
   padding: ${({ theme }) => theme.spacing.md};
-  z-index: ${({ theme }) => theme.zIndex.drawer};
+  z-index: ${({ theme }) => theme.zIndex.appBar};
   position: fixed;
   top: 0;
   left: 0;
@@ -27,9 +27,9 @@ const Nav = () => {
     <>
       <Header initial={false} animate={isOpen ? 'open' : 'closed'}>
         <Logo />
-        <MenuToggle toggle={toggleOpen} />
+        <MenuToggle toggleMenu={toggleOpen} />
       </Header>
-      <Drawer animate={isOpen ? 'open' : 'closed'} toggle={toggleOpen} />
+      <Drawer animate={isOpen ? 'open' : 'closed'} toggleMenu={toggleOpen} />
     </>
   )
 }

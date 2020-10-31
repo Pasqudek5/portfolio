@@ -18,7 +18,7 @@ const OverlayLine = styled(motion.span)`
   background: #000;
 `
 
-const OverlayLines = () => {
+const DrawerOverlay = () => {
   const stiffness = 1000
 
   const variants = {
@@ -46,4 +46,4 @@ const OverlayLines = () => {
   )
 }
 
-export default OverlayLines
+export default DrawerOverlay

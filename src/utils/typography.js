@@ -34,7 +34,7 @@ const typography = {
   button: {
     fontFamily: Cabin,
     fontSize: '1.8rem',
-    fontWeight: 400,
+    fontWeight: 700,
   }
 }
 

@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { createGlobalStyle  } from 'styled-components';
+import styled, { createGlobalStyle  } from 'styled-components';
 
 import ThemeProvider from 'containers/ThemeProvider'
 
 import SEO from 'components/SEO'
+import Nav from 'components/Nav'
 
 const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -24,12 +25,17 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
+const Main = styled.main`
+  padding-top: calc(6rem + 1.2rem);
+`
+
 const Layout = ({ title, children }) => {
   return (
     <ThemeProvider>
-      <SEO title={title} />
       <GlobalStyles />
-      {children}
+      <SEO title={title} />
+      <Nav />
+      <Main>{children}</Main>
     </ThemeProvider>
   )
 }

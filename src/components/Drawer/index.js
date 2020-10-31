@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion'
 
-import OverlayLines from './OverlayLines'
+import DrawerOverlay from './DrawerOverlay'
 import DrawerList from './DrawerList'
 import DrawerItem from './DrawerItem'
 
 const DrawerWrapper = styled(motion.nav)`
-  z-index: ${({ theme }) => theme.zIndex.appBar};
+  z-index: ${({ theme }) => theme.zIndex.drawer};
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@ const routes = [
   { to: '#contact', label: 'contact' },
 ]
 
-const Drawer = ({ toggleOpen, animate }) => {
+const Drawer = ({ toggleMenu, animate }) => {
   const staggerChildren = 0.09;
 
   const variants = {
@@ -42,10 +42,10 @@ const Drawer = ({ toggleOpen, animate }) => {
 
   return (
     <DrawerWrapper initial={false} animate={animate} variants={variants} >
-      <OverlayLines />
+      <DrawerOverlay />
       <DrawerList>
         {routes.map(({ to, label }) => (
-          <DrawerItem key={to} to={to} toggleOpen={toggleOpen}>{label}</DrawerItem>
+          <DrawerItem key={to} to={to} toggleMenu={toggleMenu}>{label}</DrawerItem>
         ))}
       </DrawerList>
     </DrawerWrapper>
@@ -53,7 +53,7 @@ const Drawer = ({ toggleOpen, animate }) => {
 }
 
 Drawer.propTypes = {
-  toggleOpen: PropTypes.func.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
   animate: PropTypes.oneOf(['open', 'closed'])
 }
 
