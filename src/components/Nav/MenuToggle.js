@@ -32,7 +32,12 @@ export const MenuToggle = ({ toggleMenu }) => {
     <Button onClick={() => toggleMenu()}>
       <Svg
         variants={{
-          open: { stroke: theme.colors.secondary.text },
+          open: {
+            stroke: theme.colors.secondary.text,
+            transition: {
+              delay: 0.2,
+            }
+          },
           closed: { stroke: theme.colors.primary.text }
         }}
         viewBox="0 0 23 23"
