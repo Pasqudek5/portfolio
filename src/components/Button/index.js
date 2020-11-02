@@ -43,26 +43,18 @@ const ButtonOverlay = styled(motion.span)`
 `
 
 const Button = ({ secondary = false, children }) => {
-  const stiffness = 1;
-
   const variants = {
     rest: {
       width: '5rem',
-      transition: {
-        width: { stiffness }
-      }
     },
     hover: {
       width: '100%',
-      transition: {
-        width: { stiffness }
-      }
     }
   }
 
   return (
-    <StyledButton secondary={secondary} whileHover="hover" animate="rest">
-      <ButtonOverlay variants={variants} />
+    <StyledButton secondary={secondary} whileHover="hover" initial="rest">
+      <ButtonOverlay variants={variants} transition={{ stiffness: 200 }} />
       {children}
       <Arrow />
     </StyledButton>
