@@ -3,14 +3,9 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import { motion } from 'framer-motion'
 
-const TextWrapper = styled(motion.p)`
-  display: flex;
-`
+const Letter = styled(motion.span)``
 
-const Letter = styled(motion.span)`
-`
-
-const AnimatedText = ({ children }) => {
+const withAnimatedText = TextWrapper => ({ children, ...props}) => {
   const containerVariants = {
     before: {},
     after: { transition: { staggerChildren: 0.06 } },
@@ -32,11 +27,12 @@ const AnimatedText = ({ children }) => {
       variants={containerVariants}
       initial="before"
       animate="after"
+      {...props}
     >
       {children.split('').map((letter, index) => (
         <Letter
-          key={ index }
-          variants={ letterVariants }
+          key={index}
+          variants={letterVariants}
         >
           {letter === ' ' ? '\u00A0' : letter}
         </Letter>
@@ -45,8 +41,8 @@ const AnimatedText = ({ children }) => {
   )
 }
 
-AnimatedText.propTypes = {
-  children: PropTypes.string.isRequired
+withAnimatedText.propTypes = {
+  TextWrapper: PropTypes.node.isRequired,
 }
 
-export default AnimatedText
+export default withAnimatedText

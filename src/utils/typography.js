@@ -3,7 +3,7 @@ const Roboto = `'Roboto', sans-serif`
 
 const typography = {
   fontFamily: Roboto,
-  fontSize: '1.6rem',
+  fontSize: '1.8rem',
   fontWeightRegular: 400,
   fontWeightBold: 700,
   nav: {
@@ -13,22 +13,22 @@ const typography = {
   },
   title: {
     fontFamily: Cabin,
-    fontSize: '2.4rem',
+    fontSize: '4.2rem',
     fontWeight: 700,
   },
   body: {
     fontFamily: Roboto,
-    fontSize: '1.6rem',
+    fontSize: '1.8rem',
     fontWeight: 400,
   },
   caption: {
     fontFamily: Roboto,
-    fontSize: '1.4rem',
+    fontSize: '1.8rem',
     fontWeight: 400,
   },
   subtitle: {
     fontFamily: Roboto,
-    fontSize: '1rem',
+    fontSize: '1.2rem',
     fontWeight: 400,
   },
   button: {
